@@ -36,9 +36,9 @@ class App extends React.Component {
         return (
             <div className="App">
                 <h1>Tutorial de React</h1>
-                <Tabla datosPersonas={personas} />
+                <Tabla datosPersonas={personas} eliminarPersona={this.eliminarPersona}/>
             </div>
-        )
+        );
     }
 }
  export default App;
