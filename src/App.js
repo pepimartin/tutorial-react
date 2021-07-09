@@ -1,37 +1,44 @@
-/*/import logo from './logo.svg';
-import './App.css';
-
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;/*/
 import React from 'react';
+import Tabla from './Tabla';
+
 class App extends React.Component {
+    state = {
+        personas: [
+            {
+                nombre: 'Clark',
+                apellido: 'Kent',
+            },
+            {
+                nombre: 'Bruce',
+                apellido: 'Wayne',
+            },
+            {
+                nombre: 'Peter',
+                apellido: 'Parker',
+            },
+            {
+                nombre: 'Selina',
+                apellido: 'Kyle',
+            },
+        ],
+    }
+    eliminarPersona = (indice) => {
+        const { personas } = this.state
+
+        this.setState({
+            personas: personas.filter((personas, i) => {
+                return i !== indice;
+            }),
+        });
+    }
     render() {
+        const {personas} = this.state;
         return (
             <div className="App">
-                <h1>Tutorial de React de Neoguias!</h1>
+                <h1>Tutorial de React</h1>
+                <Tabla datosPersonas={personas} />
             </div>
-        );
+        )
     }
 }
-export default App;
+ export default App;
