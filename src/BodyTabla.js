@@ -10,8 +10,9 @@ const BodyTabla = (props) => {
                     <button onClick={() => props.eliminarPersona(indice)}>Eliminar</button>
                 </td>
             </tr>
-        );
+        )
     })
+
     return <tbody>{filas}</tbody>
 }
 export default BodyTabla;
